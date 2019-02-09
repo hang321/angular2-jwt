@@ -284,6 +284,15 @@ export function jwtOptionsFactory(storage) {
 })
 ```
 
+## Configuration for Ionic 4+
+
+In Ionic v4, as Ionic's `Storage` return a Promise, `then()` is added to `tokenGetter`.
+```ts
+tokenGetter: ()=> {
+  return storage.get('access_token').then((value) => {});
+}
+```
+
 ## Configuration Options
 
 ### `JwtHelperService: service`
